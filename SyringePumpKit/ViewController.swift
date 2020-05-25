@@ -9,10 +9,14 @@
 import Cocoa
 
 class ViewController: NSViewController {
-
+        
+    let controller = syringePump(port: "/dev/tty.usbserial")
+//    let controller = syringePumpSS(port: "/dev/tty.usbserial")
+//    let controller = test()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
 
@@ -22,6 +26,17 @@ class ViewController: NSViewController {
         }
     }
 
-
+    @IBOutlet weak var inputTextField: NSTextField!
+    
+    @IBOutlet weak var recievedTextField: NSTextField!
+    
+    @IBAction func connect(_ sender: NSButton) {
+        self.controller.info()
+    }
+    
+    @IBAction func sendButtonPressed(_ sender: NSButton) {
+        let command = inputTextField.stringValue
+        controller.go(command: command)
+    }
 }
 
