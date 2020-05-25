@@ -11,8 +11,7 @@ import Cocoa
 class ViewController: NSViewController {
         
     let controller = syringePump(port: "/dev/tty.usbserial")
-//    let controller = syringePumpSS(port: "/dev/tty.usbserial")
-//    let controller = test()
+//    let controller = SerialPortDemoController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,5 +37,8 @@ class ViewController: NSViewController {
         let command = inputTextField.stringValue
         controller.go(command: command)
     }
+    
+
+
 }
 

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AA5463AF247C4D2D0008576E /* syringePumpSS.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5463AE247C4D2D0008576E /* syringePumpSS.swift */; };
 		AAC55276247737630004A265 /* ORSSerial in Frameworks */ = {isa = PBXBuildFile; productRef = AAC55275247737630004A265 /* ORSSerial */; };
 		AAC5527824773BBA0004A265 /* syringePump.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC5527724773BBA0004A265 /* syringePump.swift */; };
 		AACD75C42476E26600EF7507 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACD75C32476E26600EF7507 /* AppDelegate.swift */; };
@@ -18,7 +17,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AA5463AE247C4D2D0008576E /* syringePumpSS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = syringePumpSS.swift; sourceTree = "<group>"; };
 		AAC5527724773BBA0004A265 /* syringePump.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = syringePump.swift; sourceTree = "<group>"; };
 		AACD75C02476E26600EF7507 /* SyringePumpKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SyringePumpKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AACD75C32476E26600EF7507 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,7 +61,6 @@
 			children = (
 				AACD75C32476E26600EF7507 /* AppDelegate.swift */,
 				AAC5527724773BBA0004A265 /* syringePump.swift */,
-				AA5463AE247C4D2D0008576E /* syringePumpSS.swift */,
 				AACD75C52476E26600EF7507 /* ViewController.swift */,
 				AACD75C72476E26700EF7507 /* Assets.xcassets */,
 				AACD75C92476E26700EF7507 /* Main.storyboard */,
@@ -154,7 +151,6 @@
 				AAC5527824773BBA0004A265 /* syringePump.swift in Sources */,
 				AACD75C62476E26600EF7507 /* ViewController.swift in Sources */,
 				AACD75C42476E26600EF7507 /* AppDelegate.swift in Sources */,
-				AA5463AF247C4D2D0008576E /* syringePumpSS.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
