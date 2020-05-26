@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA5463B6247C7F010008576E /* SyringePumpCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5463B5247C7F010008576E /* SyringePumpCommunicator.swift */; };
 		AAC55276247737630004A265 /* ORSSerial in Frameworks */ = {isa = PBXBuildFile; productRef = AAC55275247737630004A265 /* ORSSerial */; };
-		AAC5527824773BBA0004A265 /* syringePump.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC5527724773BBA0004A265 /* syringePump.swift */; };
+		AAC5527824773BBA0004A265 /* SyringePumpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC5527724773BBA0004A265 /* SyringePumpController.swift */; };
 		AACD75C42476E26600EF7507 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACD75C32476E26600EF7507 /* AppDelegate.swift */; };
 		AACD75C62476E26600EF7507 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACD75C52476E26600EF7507 /* ViewController.swift */; };
 		AACD75C82476E26700EF7507 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AACD75C72476E26700EF7507 /* Assets.xcassets */; };
@@ -16,7 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AAC5527724773BBA0004A265 /* syringePump.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = syringePump.swift; sourceTree = "<group>"; };
+		AA5463B5247C7F010008576E /* SyringePumpCommunicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyringePumpCommunicator.swift; sourceTree = "<group>"; };
+		AAC5527724773BBA0004A265 /* SyringePumpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyringePumpController.swift; sourceTree = "<group>"; };
 		AACD75C02476E26600EF7507 /* SyringePumpKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SyringePumpKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AACD75C32476E26600EF7507 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AACD75C52476E26600EF7507 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,7 +60,8 @@
 			isa = PBXGroup;
 			children = (
 				AACD75C32476E26600EF7507 /* AppDelegate.swift */,
-				AAC5527724773BBA0004A265 /* syringePump.swift */,
+				AAC5527724773BBA0004A265 /* SyringePumpController.swift */,
+				AA5463B5247C7F010008576E /* SyringePumpCommunicator.swift */,
 				AACD75C52476E26600EF7507 /* ViewController.swift */,
 				AACD75C72476E26700EF7507 /* Assets.xcassets */,
 				AACD75C92476E26700EF7507 /* Main.storyboard */,
@@ -144,7 +147,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAC5527824773BBA0004A265 /* syringePump.swift in Sources */,
+				AA5463B6247C7F010008576E /* SyringePumpCommunicator.swift in Sources */,
+				AAC5527824773BBA0004A265 /* SyringePumpController.swift in Sources */,
 				AACD75C62476E26600EF7507 /* ViewController.swift in Sources */,
 				AACD75C42476E26600EF7507 /* AppDelegate.swift in Sources */,
 			);
