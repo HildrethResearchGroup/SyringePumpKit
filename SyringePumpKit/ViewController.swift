@@ -79,7 +79,6 @@ class ViewController: NSViewController {
             connectionIndicator.image = NSImage(named: "NSStatusUnavailable")
         }
     }
-
 }
 
 extension ViewController: NSTextFieldDelegate {
