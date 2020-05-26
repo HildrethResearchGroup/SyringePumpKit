@@ -3,25 +3,40 @@ import Foundation
 class SyringePumpContoller {
     let communicator: SyringePumpCommunicator
     
+    var pumpRate = PumpRate.microLiterPerHour {
+        didSet {
+            
+        }
+    }
+    var rate = 0.0 {
+        didSet {
+            if rate != oldValue {
+                self.setRate(rate: String(rate), units: self.pumpRate)
+            }
+        }
+    }
+    
+    
     init(port: String) {
         communicator = SyringePumpCommunicator(port: port)
     }
 }
 
 // MARK: - Functions
-extension SyringePumpContoller{
+extension SyringePumpContoller {
     
     enum PumpRate: String{
-    case microLiterPerMinute = "UM"
-    case milliLiterPerMinute = "MM"
-    case microLiterPerHour = "UH"
-    case milliLiterPerHour = "MH"
+        case microLiterPerMinute = "UM"
+        case milliLiterPerMinute = "MM"
+        case microLiterPerHour = "UH"
+        case milliLiterPerHour = "MH"
     }
     
     enum PumpDirection: String {
         case withdraw = "WDR"
         case infuse = "INF"
     }
+    
         
     /**
      Set inside diameter of syringe in mm. Set is only valid when the Pumping Program is not operating. Setting the syringe diameter also sets the units for “Volume to be Dispensed” and “Volume Dispensed”.
@@ -32,7 +47,7 @@ extension SyringePumpContoller{
         communicator.write(command: "DIA\(diameter)")
     }
     
-    func readDiameter() -> String {
+    func getDiameter() -> String {
         communicator.write(command: "DIA")
         return communicator.tempStr
     }
@@ -42,7 +57,7 @@ extension SyringePumpContoller{
         communicator.write(command: "RAT\(rate)\(units.rawValue)")
     }
     
-    func readRate() -> String{
+    func getRate() -> String{
         communicator.write(command: "FUNRAT")
         communicator.write(command: "RAT")
         return communicator.tempStr

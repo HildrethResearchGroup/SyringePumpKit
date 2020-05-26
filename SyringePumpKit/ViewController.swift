@@ -14,6 +14,7 @@ class ViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setDelegates()
     }
 
     override var representedObject: Any? {
@@ -31,6 +32,13 @@ class ViewController: NSViewController {
     @IBOutlet weak var timeElapsedField: NSTextField!
     @IBOutlet weak var volElapsedField: NSTextField!
 
+    
+// MARK: - Setup
+    func setDelegates() {
+        self.rateField.delegate = self
+    }
+    
+    
 // MARK: - Actions
     @IBAction func connect(_ sender: NSButton) {
         controller = SyringePumpContoller(port: "/dev/tty.usbserial")
@@ -45,6 +53,11 @@ class ViewController: NSViewController {
         
         // update view controller
         updateConnectIndicator()
+        diameterField.stringValue = "TEST"
+        rateField.stringValue = "TEST"
+//        diameterField.stringValue = controller?.getDiameter() as! String
+//        rateField.stringValue = controller?.getRate() as! String
+        
         
     }
     
@@ -67,4 +80,15 @@ class ViewController: NSViewController {
         }
     }
 
+}
+
+extension ViewController: NSTextFieldDelegate {
+    func controlTextDidChange(_ obj: Notification) {
+        if let object = obj.object as? NSTextField {
+            if object == rateField {
+                let rate = rateField.doubleValue
+                self.controller?.rate = rate
+            }
+        }
+    }
 }

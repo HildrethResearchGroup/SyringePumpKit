@@ -30,8 +30,11 @@ class SyringePumpCommunicator: NSObject, ORSSerialPortDelegate {
         
     // Writes commands to the pump
     func write(command: String){
-        let sendCommand = "\(command)\n\r"
-        self.serialPort.send(sendCommand.data(using: .ascii)!) // someData is an NSData object
+        // waiting a short time between sending commands
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            let sendCommand = "\(command)\n\r"
+            self.serialPort.send(sendCommand.data(using: .ascii)!) // someData is an NSData object
+        }
     }
     
     // Reads commands from the pump
@@ -41,6 +44,7 @@ class SyringePumpCommunicator: NSObject, ORSSerialPortDelegate {
 //            print("got \(tempStr)")
             tempStr = ""
         } else if string == "\u{03}" {
+            
            print("Recieved: \(tempStr) from pump")
         } else {
             tempStr += string!
