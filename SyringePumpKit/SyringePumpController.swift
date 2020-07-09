@@ -18,7 +18,7 @@ class SyringePumpContoller {
     
     
     init(port: String) {
-        communicator = SyringePumpCommunicator(port: port)
+        communicator = SyringePumpCommunicator(portName: port)
     }
 }
 

@@ -42,7 +42,7 @@ class ViewController: NSViewController {
 // MARK: - Actions
     @IBAction func connect(_ sender: NSButton) {
         controller = SyringePumpContoller(port: "/dev/tty.usbserial")
-        updateConnectIndicator()
+//        updateConnectIndicator()
     }
         
     
@@ -52,7 +52,7 @@ class ViewController: NSViewController {
         controller?.setDirection(of: .infuse) //<- change to be dynamic
         
         // update view controller
-        updateConnectIndicator()
+//        updateConnectIndicator()
         diameterField.stringValue = "TEST"
         rateField.stringValue = "TEST"
 //        diameterField.stringValue = controller?.getDiameter() as! String
@@ -72,13 +72,13 @@ class ViewController: NSViewController {
 
 // MARK: - Update functions
     
-    func updateConnectIndicator(){
-        if (controller?.communicator.serialPort.isOpen)!{
-            connectionIndicator.image = NSImage(named: "NSStatusAvailable")
-        } else {
-            connectionIndicator.image = NSImage(named: "NSStatusUnavailable")
-        }
-    }
+//    func updateConnectIndicator(){
+//        if (controller?.communicator.serialPort.isOpen)!{
+//            connectionIndicator.image = NSImage(named: "NSStatusAvailable")
+//        } else {
+//            connectionIndicator.image = NSImage(named: "NSStatusUnavailable")
+//        }
+//    }
 }
 
 extension ViewController: NSTextFieldDelegate {

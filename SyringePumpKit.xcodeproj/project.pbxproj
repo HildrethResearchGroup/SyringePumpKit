@@ -14,6 +14,7 @@
 		AACD75C62476E26600EF7507 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACD75C52476E26600EF7507 /* ViewController.swift */; };
 		AACD75C82476E26700EF7507 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AACD75C72476E26700EF7507 /* Assets.xcassets */; };
 		AACD75CB2476E26700EF7507 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AACD75C92476E26700EF7507 /* Main.storyboard */; };
+		AADB6A3224B78C2000CD665B /* SwiftSerial in Frameworks */ = {isa = PBXBuildFile; productRef = AADB6A3124B78C2000CD665B /* SwiftSerial */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AADB6A3224B78C2000CD665B /* SwiftSerial in Frameworks */,
 				AAC55276247737630004A265 /* ORSSerial in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -89,6 +91,7 @@
 			name = SyringePumpKit;
 			packageProductDependencies = (
 				AAC55275247737630004A265 /* ORSSerial */,
+				AADB6A3124B78C2000CD665B /* SwiftSerial */,
 			);
 			productName = SyringePumpKit;
 			productReference = AACD75C02476E26600EF7507 /* SyringePumpKit.app */;
@@ -120,6 +123,7 @@
 			mainGroup = AACD75B72476E26600EF7507;
 			packageReferences = (
 				AAC55274247737630004A265 /* XCRemoteSwiftPackageReference "ORSSerialPort" */,
+				AADB6A3024B78C2000CD665B /* XCRemoteSwiftPackageReference "SwiftSerial" */,
 			);
 			productRefGroup = AACD75C12476E26600EF7507 /* Products */;
 			projectDirPath = "";
@@ -357,6 +361,14 @@
 				minimumVersion = 2.1.0;
 			};
 		};
+		AADB6A3024B78C2000CD665B /* XCRemoteSwiftPackageReference "SwiftSerial" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/yeokm1/SwiftSerial.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -364,6 +376,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AAC55274247737630004A265 /* XCRemoteSwiftPackageReference "ORSSerialPort" */;
 			productName = ORSSerial;
+		};
+		AADB6A3124B78C2000CD665B /* SwiftSerial */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AADB6A3024B78C2000CD665B /* XCRemoteSwiftPackageReference "SwiftSerial" */;
+			productName = SwiftSerial;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -7,38 +7,47 @@
 //
 
 import Foundation
-import ORSSerial
+import SwiftSerial
 
-class SyringePumpCommunicator: NSObject, ORSSerialPortDelegate {
+class SyringePumpCommunicator: NSObject {
     
-    let serialPort: ORSSerialPort
+    let serialPort: SerialPort
     var tempStr = ""
     
-    init(port: String) {
-        self.serialPort = ORSSerialPort(path: port)!
-        self.serialPort.baudRate = 9600
-        self.serialPort.numberOfStopBits = 1
-        self.serialPort.parity = .none
-        self.serialPort.open()
-        super.init()
-        self.serialPort.delegate = self
-    }
-    
-    func serialPortWasRemovedFromSystem(_ serialPort: ORSSerialPort) {
-        print("serial port removed from sys")
+    init(portName: String) {
+        self.serialPort = SerialPort(path: portName)
+        
+        do {
+        print("Attempting to open port: \(portName)")
+        try serialPort.openPort()
+        print("Serial port \(portName) opened successfully.")
+        }
+        catch {
+            serialPort.closePort()
+            print("Port Closed")
+        }
+            
+        self.serialPort.setSettings(receiveRate: .baud9600,
+                               transmitRate: .baud9600,
+                               minimumBytesToRead: 1)
     }
         
+    
     // Writes commands to the pump
     func write(command: String){
         // waiting a short time between sending commands
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
             let sendCommand = "\(command)\n\r"
-            self.serialPort.send(sendCommand.data(using: .ascii)!) // someData is an NSData object
+            do {
+            try self.serialPort.writeData(sendCommand.data(using: .ascii)!) // someData is an NSData object
+            }
+            catch{print("failed to send command")}
         }
     }
     
+    
     // Reads commands from the pump
-    func serialPort(_ serialPort: ORSSerialPort, didReceive data: Data) {
+    func serialPort(_ serialPort: SerialPort, didReceive data: Data) {
         let string = String(data: data, encoding: .ascii)
         if string == "\u{02}"{
 //            print("got \(tempStr)")
@@ -52,7 +61,7 @@ class SyringePumpCommunicator: NSObject, ORSSerialPortDelegate {
     }
     
     func close(){
-        self.serialPort.close()
+        self.serialPort.closePort()
     }
     
 }
